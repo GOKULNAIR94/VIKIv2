@@ -44,6 +44,8 @@ restService.post('/inputmsg', function(req, res) {
     var speech = '';
     var varHost = '';
     var varPath = '';
+    
+    console.log( "intentName : " + intentName);
     try
     {
         if( intentName == 'Budget' || intentName == 'Expense' ){
@@ -60,7 +62,8 @@ restService.post('/inputmsg', function(req, res) {
             varHost = 'polar-sea-99105.herokuapp.com';
             varPath = '/oppty';
         }
-        
+        console.log( "varHost : " + varHost );
+        console.log( "varPath : " + varPath);
         var newoptions = {
           host: varHost,
           path: varPath,
