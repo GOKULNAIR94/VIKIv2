@@ -57,13 +57,23 @@ restService.post('/inputmsg', function(req, res) {
           });
 
           response.on('end', function() {
-            console.log( "Body : " + body );
-            responseObject = JSON.parse(body);
-            speech = responseObject.speech;
-            return res.json({
-              speech: speech,
-              displayText: speech
-            })
+              console.log( "Body : " + body );
+              try
+              {
+                responseObject = JSON.parse(body);
+                speech = responseObject.speech;
+                return res.json({
+                  speech: speech,
+                  displayText: speech
+                })
+              }
+              catch(e){
+                speech = "Error occured!";
+                return res.json({
+                  speech: speech,
+                  displayText: speech
+                })
+              }
           })
         }).on('error', function(e){
           speech = "Error occured!";
