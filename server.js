@@ -42,12 +42,28 @@ restService.post('/inputmsg', function(req, res) {
     console.log( "intentName : " + intentName );
     var content;
     var speech = '';
+    var varHost = '';
+    var varPath = '';
     try
     {
-      if( intentName == 'Budget' || intentName == 'Expense' ){
+        if( intentName == 'Budget' || intentName == 'Expense' ){
+            varHost = 'vikiviki.herokuapp.com';
+            varPath = '/inputmsg'; 
+        }
+        
+        if( intentName == 'reporting' ){
+            varHost = 'salty-tor-67194.herokuapp.com';
+            varPath = '/report';
+        }
+        
+        if( intentName == 'oppty' ){
+            varHost = 'polar-sea-99105.herokuapp.com';
+            varPath = '/oppty';
+        }
+        
         var newoptions = {
-          host: 'vikiviki.herokuapp.com',
-          path: '/inputmsg',
+          host: varHost,
+          path: varPath,
           data: req.body,
           method:'POST',
           headers: {
@@ -81,7 +97,7 @@ restService.post('/inputmsg', function(req, res) {
         });
         post_req.write(JSON.stringify(req.body));
         post_req.end();
-      }
+      
 
 
       if(intentName == 'ReadCSV' ){
