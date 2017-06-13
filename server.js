@@ -22,7 +22,7 @@ restService.post('/inputmsg', function(req, res) {
     console.log( "intentName : " + intentName);
     try
     {
-        if( intentName == 'News' ){
+        if( intentName == 'News' || intentName == 'News - link'){
             varHost = 'vikinews.herokuapp.com';
             varPath = '/inputmsg'; 
         }
