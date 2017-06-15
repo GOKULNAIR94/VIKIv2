@@ -38,8 +38,9 @@ restService.post('/inputmsg', function(req, res) {
         }
         
         if( intentName == 'oppty' || intentName=='oppty - next' || intentName=='oppty - custom'  ){
-            varHost = 'polar-sea-99105.herokuapp.com';
-            varPath = '/oppty';
+            //varHost = 'polar-sea-99105.herokuapp.com';
+            varHost = 'opty.herokuapp.com';
+			varPath = '/oppty';
         }
         console.log( "varHost : " + varHost );
         console.log( "varPath : " + varPath);
