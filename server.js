@@ -37,7 +37,7 @@ restService.post('/inputmsg', function(req, res) {
             varPath = '/report';
         }
         
-        if( intentName == 'oppty' || intentName=='oppty - next' || intentName=='oppty - custom'  ){
+        if( intentName == 'oppty' || intentName=='oppty - next' || intentName=='oppty - custom' || intentName=='oppty - News'  ){
             //varHost = 'polar-sea-99105.herokuapp.com';
             varHost = 'opty.herokuapp.com';
 			varPath = '/oppty';
