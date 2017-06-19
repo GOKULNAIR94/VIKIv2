@@ -22,6 +22,10 @@ restService.post('/inputmsg', function(req, res) {
 			http.get("http://salty-tor-67194.herokuapp.com");
 			http.get("http://opty.herokuapp.com");
 		}
+		catch(e)
+		{
+			console.log( "Error : " + e );
+		}
 	}
     var content;
     var speech = '';
