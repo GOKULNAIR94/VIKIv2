@@ -17,10 +17,10 @@ restService.post('/inputmsg', function(req, res) {
 	if( intentName == "Default Welcome Intent"){
 		try
 		{
-			http.get("http://vikinews.herokuapp.com");
-			http.get("http://vikiviki.herokuapp.com");
-			http.get("http://salty-tor-67194.herokuapp.com");
-			http.get("http://opty.herokuapp.com");
+			http.get("https://vikinews.herokuapp.com");
+			http.get("https://vikiviki.herokuapp.com");
+			http.get("https://salty-tor-67194.herokuapp.com");
+			http.get("https://opty.herokuapp.com");
 		}
 		catch(e)
 		{
