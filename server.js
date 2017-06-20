@@ -40,7 +40,7 @@ restService.post('/inputmsg', function(req, res) {
       console.log("username : " + username);
       console.log("password : " + password);
 
-      Index(req, res, function(result) {
+      Index( username, req, res, function( result ) {
           console.log("Index Called");
       });
     } else {

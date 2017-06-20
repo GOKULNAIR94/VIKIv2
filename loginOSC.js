@@ -1,9 +1,9 @@
 module.exports = function(req, res) {
   const express = require('express');
-const bodyParser = require('body-parser');
-const restService = express();
-var http = require('https');
-var fs = require('fs');
+  const bodyParser = require('body-parser');
+  const restService = express();
+  var http = require('https');
+  var fs = require('fs');
 
 
     var sessionId = req.body.sessionId;

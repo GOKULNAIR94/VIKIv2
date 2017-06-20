@@ -1,4 +1,4 @@
-module.exports = function(req, res) {
+module.exports = function( username, req, res ) {
   
   const express = require('express');
   const bodyParser = require('body-parser');
@@ -17,11 +17,11 @@ module.exports = function(req, res) {
     
     if( intentName == "Default Welcome Intent")
     {
-      speech = "Hi There! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!";
-                return res.json({
-                  speech: speech,
-                  displayText: speech
-                })
+      speech = "Hi " + username + "! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!";
+        return res.json({
+          speech: speech,
+          displayText: speech
+        })
     }
   }
   catch(e)
