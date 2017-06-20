@@ -1,4 +1,4 @@
-module.exports = function( username, req, res ) {
+module.exports = function( username, password, req, res ) {
   
   const express = require('express');
   const bodyParser = require('body-parser');
@@ -58,6 +58,10 @@ module.exports = function( username, req, res ) {
         }
         console.log( "varHost : " + varHost );
         console.log( "varPath : " + varPath);
+
+        req.body["username"] = username;
+        req.body["password"] = password;
+
         var newoptions = {
           host: varHost,
           path: varPath,
