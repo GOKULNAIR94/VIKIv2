@@ -44,7 +44,7 @@ module.exports = function(req, res) {
                 console.log("Content :" + JSON.stringify(content) );
                 content = JSON.stringify( content, null, 2);
                 fs.writeFile('login.json', content, function(){
-                  speech = "Thanks! " + username + ", You are logged in! What can I do for you?";
+                  speech = "Thank you " + username + "! You are logged in! What can I do for you?";
                     return res.json({
                       speech: speech,
                       displayText: speech
