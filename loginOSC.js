@@ -1,4 +1,12 @@
 module.exports = function(req, res) {
+    var sessionId = req.body.sessionId;
+    console.log("sessionId : " + sessionId);
+    var content;
+
+    content = fs.readFileSync('login.json', 'utf8');
+    console.log("Content : " + content);
+    content = JSON.parse(content);
+
     
       console.log("Login Intent");
       var username = req.body.result.parameters['username'];
