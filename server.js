@@ -13,7 +13,6 @@ restService.use(bodyParser.json());
 var Index = require("./index");
 var Login = require("./loginOSC");
 
-var fs = require('fs');
 
 
 
