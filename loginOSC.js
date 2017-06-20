@@ -17,7 +17,7 @@ module.exports = function(req, res) {
 
       console.log("Login Intent");
       var username = req.body.result.contexts[0].parameters['username.original'];
-      var password = req.body.result.contexts[0].parameters['password.original'];
+      var password = "lntLNT2K16_1";//req.body.result.contexts[0].parameters['password.original'];
 
       var http = require('https');
       options = {
