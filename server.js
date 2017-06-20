@@ -23,8 +23,6 @@ restService.post('/inputmsg', function(req, res) {
 			http.get("https://opty.herokuapp.com");
 			speech = "";
                 return res.json({
-                  speech: speech,
-                  displayText: speech
                 })
 		}
 		catch(e)
