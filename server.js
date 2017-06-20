@@ -14,14 +14,16 @@ var Index = require( "./index" );
 var Login = require( "./loginOSC" );
 
 var fs = require('fs');
-var sessionId = req.body.sessionId;
-console.log( "sessionId : " + sessionId);
-var content;
+
 
 
 
 
 restService.post('/inputmsg', function(req, res) {
+
+  var sessionId = req.body.sessionId;
+  console.log( "sessionId : " + sessionId);
+  var content;
 
 	content = fs.readFileSync('login.json', 'utf8');
 	console.log( "Content : " + content);
