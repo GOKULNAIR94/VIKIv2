@@ -9,23 +9,24 @@ module.exports = function(req, res) {
 
   var intentName = req.body.result.metadata.intentName;
   console.log( "intentName : " + intentName );
-  if( intentName == "Default Welcome Intent"){
-    try
+  try{
+    http.get("https://vikinews.herokuapp.com");
+    http.get("https://vikiviki.herokuapp.com");
+    http.get("https://salty-tor-67194.herokuapp.com");
+    http.get("https://opty.herokuapp.com");
+    
+    if( intentName == "Default Welcome Intent")
     {
-      http.get("https://vikinews.herokuapp.com");
-      http.get("https://vikiviki.herokuapp.com");
-      http.get("https://salty-tor-67194.herokuapp.com");
-      http.get("https://opty.herokuapp.com");
       speech = "Hi There! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!";
                 return res.json({
                   speech: speech,
                   displayText: speech
                 })
     }
-    catch(e)
-    {
-      console.log( "Error : " + e );
-    }
+  }
+  catch(e)
+  {
+    console.log( "Error : " + e );
   }
     var content;
     var speech = '';
