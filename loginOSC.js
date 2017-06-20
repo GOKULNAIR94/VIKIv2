@@ -1,4 +1,7 @@
 module.exports = function(req, res) {
+  var fs = require('fs');
+
+
     var sessionId = req.body.sessionId;
     console.log("sessionId : " + sessionId);
     var content;
@@ -7,7 +10,7 @@ module.exports = function(req, res) {
     console.log("Content : " + content);
     content = JSON.parse(content);
 
-    
+
       console.log("Login Intent");
       var username = req.body.result.parameters['username'];
       var password = req.body.result.parameters['password'];
