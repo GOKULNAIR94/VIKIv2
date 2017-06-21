@@ -1,4 +1,4 @@
-module.exports = function( username, password, req, res ) {
+module.exports = function( req, res ) {
   
   const express = require('express');
   const bodyParser = require('body-parser');
