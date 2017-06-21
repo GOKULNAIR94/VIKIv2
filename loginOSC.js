@@ -34,7 +34,7 @@ module.exports = function(req, res) {
         });
         resx.on('end', function() {
             try{
-                console.log( 'resx : ' + JSON.stringify(resx) );
+                console.log( 'resx : ' + JSON.stringify( resx.status ) );
                 var resObj = JSON.parse(responseString);
                 var jsonMap = {
                     "username" : username,
