@@ -59,9 +59,6 @@ module.exports = function( req, res ) {
         console.log( "varHost : " + varHost );
         console.log( "varPath : " + varPath);
 
-        req.body["username"] = username;
-        req.body["password"] = password;
-
         var newoptions = {
           host: varHost,
           path: varPath,
