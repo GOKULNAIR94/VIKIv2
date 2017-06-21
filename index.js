@@ -10,6 +10,7 @@ module.exports = function( username, password, req, res ) {
   var intentName = req.body.result.metadata.intentName;
   console.log( "intentName : " + intentName );
   try{
+    var speech = "";
     http.get("https://vikinews.herokuapp.com");
     http.get("https://vikiviki.herokuapp.com");
     http.get("https://salty-tor-67194.herokuapp.com");
@@ -17,7 +18,7 @@ module.exports = function( username, password, req, res ) {
     
     if( intentName == "Default Welcome Intent")
     {
-      speech = "Hi " + username + "! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!";
+      speech = "Hi Kaaman! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!";
         return res.json({
           speech: speech,
           displayText: speech
@@ -28,8 +29,7 @@ module.exports = function( username, password, req, res ) {
   {
     console.log( "Error : " + e );
   }
-    var content;
-    var speech = '';
+    
     var varHost = '';
     var varPath = '';
     
