@@ -31,10 +31,11 @@ module.exports = function(req, res) {
       var request = http.get(options, function(resx) {
         resx.on('data', function(data) {
             responseString += data;
+            console.log( 'data : ' + data );
         });
         resx.on('end', function() {
             try{
-                console.log( 'Respo String : ' + responseString );
+                //console.log( 'Respo String : ' + responseString );
                 var resObj = JSON.parse(responseString);
                 var jsonMap = {
                     "username" : username,
