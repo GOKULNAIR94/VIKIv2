@@ -17,11 +17,11 @@ module.exports = function(req, res) {
 
       console.log("Login Intent");
       var username = req.body.result.contexts[0].parameters['username.original'];
-      var password = req.body.result.contexts[0].parameters['password.original']; //"lntLNT2K16_1";
+      var password = "lntLNT2K16_1"; // req.body.result.contexts[0].parameters['password.original']; 
 
       var http = require('https');
       options = {
-          host: 'cbhs-test.crm.us2.oraclecloud.com', // 'acs.crm.ap2.oraclecloud.com',
+          host: 'acs.crm.ap2.oraclecloud.com',
           path: "/crmCommonApi/resources/latest/accounts",
           headers: {
               'Authorization': 'Basic ' + new Buffer(username + ':' + password).toString('base64')
