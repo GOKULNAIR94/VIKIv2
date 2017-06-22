@@ -56,7 +56,7 @@ restService.post('/inputmsg', function(req, res) {
           if (intentName == "Default Welcome Intent") {
               speech = "Hi There! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help! Please Login. Try saying: I am Gokul and password is Gokul123";
           } else {
-              speech = "Hi There! My name is VIKI (Virtual Interactive Kinetic Intelligence) and I am here to help!";
+              speech = "Hi There! Soory I missed that! Please login!";
           }
           return res.json({
               speech: speech,
