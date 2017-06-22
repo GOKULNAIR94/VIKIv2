@@ -86,7 +86,10 @@ module.exports = function( username, password, req, res ) {
               {
                 console.log( "Done 1..... " );
                 responseObject = JSON.parse(body);
-                speech = responseObject.speech;
+                if( typeof responseObject.speech != "object")
+                    speech = responseObject.speech;
+                  else
+                      speech = responseObject.speech.speech;
                   
                 console.log( "Done 2..... " );
                 return res.json({
