@@ -81,7 +81,7 @@ module.exports = function( username, password, req, res ) {
           });
 
           response.on('end', function() {
-              console.log( "Body : " + body );
+              console.log( "Body -: " + body );
               try
               {
                 responseObject = JSON.parse(body);
@@ -90,6 +90,7 @@ module.exports = function( username, password, req, res ) {
                   speech: speech,
                   displayText: speech
                 })
+                console.log( "Done..... " );
               }
               catch(e){
                 speech = "Error occured!";
