@@ -84,13 +84,13 @@ module.exports = function( username, password, req, res ) {
               console.log( "Body -: " + body );
               try
               {
+                console.log( "Done..... " );
                 responseObject = JSON.parse(body);
                 speech = responseObject.speech;
                 return res.json({
                   speech: speech,
                   displayText: speech
                 })
-                console.log( "Done..... " );
               }
               catch(e){
                 speech = "Error occured!";

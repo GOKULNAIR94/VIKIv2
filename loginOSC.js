@@ -34,7 +34,6 @@ module.exports = function(req, res) {
         });
         resx.on('end', function() {
             try{
-                console.log( 'resx : ' + JSON.stringify( resx["Status code"] ) );
                 var resObj = JSON.parse(responseString);
                 var jsonMap = {
                     "username" : username,
