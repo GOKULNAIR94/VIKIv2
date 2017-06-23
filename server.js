@@ -37,7 +37,7 @@ restService.post('/inputmsg', function(req, res) {
     if (content.items.OSC[sessionId] != null) {
         var CryptoJS = require("crypto-js");
         
-        var ciphertext = content.items.OSC[sessionId].sessionId;
+        var ciphertext = content.items.OSC[sessionId];
         var bytes  = CryptoJS.AES.decrypt( ciphertext.toString(), sessionId );
         var loginEncoded = bytes.toString(CryptoJS.enc.Utf8);
 
