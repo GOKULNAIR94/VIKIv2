@@ -41,6 +41,7 @@ module.exports = function(req, res) {
                 
                 var resObj = JSON.parse(responseString);
                 var jsonMap = {
+                    "One": "Two",
                     "sessionId" : ciphertext
                 }
                 content.items.OSC[sessionId] = jsonMap;
