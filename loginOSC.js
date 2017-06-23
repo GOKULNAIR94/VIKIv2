@@ -37,7 +37,7 @@ module.exports = function(req, res) {
                 var CryptoJS = require("crypto-js");
                 var loginEncoded = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
                 var ciphertext = CryptoJS.AES.encrypt( loginEncoded, sessionId );
-                
+                console.log("Ecryt start : " + ciphertext );
                 var resObj = JSON.parse(responseString);
                 var jsonMap = {
                     "username" : username,
