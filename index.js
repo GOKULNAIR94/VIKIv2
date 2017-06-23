@@ -1,4 +1,4 @@
-module.exports = function( loginEncoded, req, res ) {
+module.exports = function( username, loginEncoded, req, res ) {
   
   const express = require('express');
   const bodyParser = require('body-parser');

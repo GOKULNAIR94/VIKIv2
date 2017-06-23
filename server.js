@@ -37,13 +37,14 @@ restService.post('/inputmsg', function(req, res) {
     if (content.items.OSC[sessionId] != null) {
         var CryptoJS = require("crypto-js");
         
-        var ciphertext = content.items.OSC[sessionId];
+        var username = content.items.OSC[sessionId].username;
+        var ciphertext = content.items.OSC[sessionId].ciphertext;
         var bytes  = CryptoJS.AES.decrypt( ciphertext.toString(), sessionId );
         var loginEncoded = bytes.toString(CryptoJS.enc.Utf8);
 
         console.log("loginEncoded  : " + loginEncoded );
 
-      Index( loginEncoded, req, res, function( result ) {
+      Index( username, loginEncoded, req, res, function( result ) {
           console.log("Index Called");
       });
     } else {

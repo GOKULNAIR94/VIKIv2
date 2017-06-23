@@ -40,10 +40,11 @@ module.exports = function(req, res) {
                 var ciphertext = CryptoJS.AES.encrypt( loginEncoded, sessionId );
                 
                 var resObj = JSON.parse(responseString);
-//                var jsonMap = {
-//                    "login" : ciphertext
-//                }
-                content.items.OSC[sessionId] = "" + ciphertext + "";
+                var jsonMap = {
+                    "ciphertext" :  "" + ciphertext + "",
+                    "username" : username
+                }
+                content.items.OSC[sessionId] = jsonMap;
                 
                 console.log("Content :" + JSON.stringify(content) );
                 content = JSON.stringify( content, null, 2);
