@@ -35,12 +35,15 @@ restService.post('/inputmsg', function(req, res) {
     console.log("intentName : " + intentName);
 
     if (content.items.OSC[sessionId] != null) {
-      var username = content.items.OSC[sessionId].username;
-      var password = content.items.OSC[sessionId].password;
-      console.log("username : " + username);
-      console.log("password : " + password);
+        var CryptoJS = require("crypto-js");
+        
+        var ciphertext = content.items.OSC[sessionId];
+        var bytes  = CryptoJS.AES.decrypt( ciphertext.toString(), sessionId );
+        var loginEncoded = bytes.toString(CryptoJS.enc.Utf8);
 
-      Index( username, password, req, res, function( result ) {
+        console.log("loginEncoded  : " + loginEncoded );
+
+      Index( loginEncoded, req, res, function( result ) {
           console.log("Index Called");
       });
     } else {

@@ -1,4 +1,4 @@
-module.exports = function( username, password, req, res ) {
+module.exports = function( loginEncoded, req, res ) {
   
   const express = require('express');
   const bodyParser = require('body-parser');
@@ -59,8 +59,7 @@ module.exports = function( username, password, req, res ) {
         console.log( "varHost : " + varHost );
         console.log( "varPath : " + varPath);
 
-        req.body["username"] = username;
-        req.body["password"] = password;
+        req.body["loginEncoded"] = loginEncoded;
 
         var newoptions = {
           host: varHost,
