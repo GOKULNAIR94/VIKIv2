@@ -80,17 +80,15 @@ module.exports = function( username, loginEncoded, req, res ) {
           });
 
           response.on('end', function() {
-              console.log( "Body -: " + body );
+              //console.log( "Body -: " + body );
               try
               {
-                console.log( "Done 1..... " );
                 responseObject = JSON.parse(body);
                 if( typeof responseObject.speech != "object")
                     speech = responseObject.speech;
                   else
                       speech = responseObject.speech.speech;
-                  
-                console.log( "Done 2..... " );
+
                 return res.json({
                   speech: speech,
                   displayText: speech
