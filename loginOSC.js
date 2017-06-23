@@ -34,11 +34,14 @@ module.exports = function(req, res) {
         });
         resx.on('end', function() {
             try{
+                var CryptoJS = require("crypto-js");
+                var loginEncoded = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
+                var ciphertext = CryptoJS.AES.encrypt( loginEncoded, sessionId );
                 
                 var resObj = JSON.parse(responseString);
                 var jsonMap = {
                     "username" : username,
-                    "sessionId" : "asdasdasdasdasdasd1q2312412eqwsdads"
+                    "sessionId" : ciphertext
                 }
                 content.items.OSC[sessionId] = jsonMap;
                 
