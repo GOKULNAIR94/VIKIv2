@@ -34,6 +34,7 @@ module.exports = function(req, res) {
         });
         resx.on('end', function() {
             try{
+                console.log("Ecryt start");
                 var CryptoJS = require("crypto-js");
                 var loginEncoded = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
                 var ciphertext = CryptoJS.AES.encrypt( loginEncoded, sessionId );
@@ -44,6 +45,7 @@ module.exports = function(req, res) {
 //                }
                 content.items.OSC[sessionId] = ciphertext;
                 
+                console.log("Ecryt End");
                 console.log("Content :" + JSON.stringify(content) );
                 content = JSON.stringify( content, null, 2);
                 fs.writeFile('login.json', content, function(){
