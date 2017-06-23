@@ -34,34 +34,20 @@ module.exports = function(req, res) {
         });
         resx.on('end', function() {
             try{
+                console.log("Ecryt start");
                 var CryptoJS = require("crypto-js");
                 var loginEncoded = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
                 var ciphertext = CryptoJS.AES.encrypt( loginEncoded, sessionId );
-                console.log("Ecryt start : " + ciphertext );
+                
                 var resObj = JSON.parse(responseString);
-                var jsonMap = {
-                    "username" : username,
-                    "sessionId" : "" + ciphertext + ""
-                };
-                content.items.OSC[sessionId] = jsonMap;
+//                var jsonMap = {
+//                    "login" : ciphertext
+//                }
+                content.items.OSC[sessionId] = "" + ciphertext + "";
                 
                 console.log("Content :" + JSON.stringify(content) );
-//                
-//                console.log("Ecryt start");
-//                var CryptoJS = require("crypto-js");
-//                var loginEncoded = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
-//                var ciphertext = CryptoJS.AES.encrypt( loginEncoded, sessionId );
-//                
-//                var resObj = JSON.parse(responseString);
-//                var jsonMap = {
-//                    "One": "Two",
-//                    "sessionId" : ciphertext
-//                }
-//                content.items.OSC[sessionId] = jsonMap;
-                
-//                console.log("Ecryt End");
-//                console.log("Content :" + JSON.stringify(content) );
                 content = JSON.stringify( content, null, 2);
+                
                 fs.writeFile('login.json', content, function(){
                   speech = "Thank you " + username + "! You are logged in! What can I do for you?";
                     return res.json({
